@@ -9,11 +9,13 @@ var postcss = require('gulp-postcss');
 var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var gulpif = require('gulp-if');
+var imagemin = require('gulp-imagemin');
+var spritesmith = require('gulp.spritesmith');
 
 var CFG = JSON.parse(fs.readFileSync('settings.json'));
 
 require('./tasks/jquery.js')();
-require('./tasks/revision.js')();
+// require('./tasks/revision.js')();
 require('./tasks/deploy.js')();
 
 gulp.task('path', function(cb) {
@@ -40,26 +42,56 @@ gulp.task('style', function() {
     .pipe(gulp.dest(CFG.PATH_PUBLIC + 'css'));
 });
 
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('sprite/*.*')
+    .pipe(spritesmith({
+      imgName: 'sprite.png',
+      // imgPath: 'img/sprite.png',
+      cssName: 'sprite.less'
+    }));
+
+  spriteData.img
+  // .pipe(imagemin())
+    .pipe(gulp.dest(CFG.PATH_PUBLIC + 'img/'));
+
+  return spriteData.css
+    .pipe(gulp.dest('less/sprite/'));
+});
+
+gulp.task('image', function() {
+  return gulp.src('img/**/*.*')
+    .pipe(imagemin())
+    .pipe(gulp.dest(CFG.PATH_PUBLIC + 'img/'));
+});
+
 gulp.task('html', function() {
-    var revFiles = JSON.parse(fs.readFileSync(CFG.PATH_PUBLIC + 'rev-manifest.json'));
-    return gulp.src('html/*.html')
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file',
-            context: {
-                path: CFG.PATH,
-                cssFile: revFiles['css/style.min.css'],
-                jsFile: revFiles['js/main.min.js'],
-                jquery: CFG.JQUERY.enabled,
-                jqueryVersion: CFG.JQUERY.version
-            }
-        }))
-        .pipe(gulp.dest(CFG.PATH_PUBLIC));
+  // var revFiles = JSON.parse(fs.readFileSync(CFG.PATH_PUBLIC + 'rev-manifest.json'));
+  return gulp.src('html/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file',
+      context: {
+        path: CFG.PATH,
+        cssFile: 'css/style.min.css',
+        jsFile: 'js/main.min.js',
+        // cssFile: revFiles['css/style.min.css'],
+        // jsFile: revFiles['js/main.min.js'],
+        jquery: CFG.JQUERY.enabled
+        // jqueryVersion: CFG.JQUERY.version
+      }
+    }))
+    .pipe(gulp.dest(CFG.PATH_PUBLIC));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('less/**/*.less', gulp.series(['style', 'revision:clean', 'revision', 'html']));
-  gulp.watch('js/**/*.js', gulp.series(['js', 'revision:clean', 'revision', 'html']));
+  // gulp.watch('img/**/*.*', gulp.series(['image', 'revision:clean', 'revision', 'html']));
+  // gulp.watch('sprite/*.*', gulp.series(['sprite', 'revision:clean', 'revision', 'html']));
+  // gulp.watch('less/**/*.less', gulp.series(['style', 'revision:clean', 'revision', 'html']));
+  // gulp.watch('js/**/*.js', gulp.series(['js', 'revision:clean', 'revision', 'html']));
+  gulp.watch('img/**/*.*', gulp.series(['image', 'html']));
+  gulp.watch('sprite/*.*', gulp.series(['sprite', 'html']));
+  gulp.watch('less/**/*.less', gulp.series(['style', 'html']));
+  gulp.watch('js/**/*.js', gulp.series(['js', 'html']));
   gulp.watch('html/**/*.html', gulp.series('html'));
 });
 
@@ -72,5 +104,7 @@ gulp.task('serve', gulp.parallel(
   }
 ));
 
-gulp.task('init', gulp.series(['path', 'js', 'style', 'revision', 'html', 'jquery']));
-gulp.task('build', gulp.series(['path', 'js', 'style', 'revision:clean', 'revision', 'html', 'jquery']));
+// gulp.task('init', gulp.series(['path', 'js', 'style', 'revision', 'html', 'jquery', 'image', 'sprite']));
+// gulp.task('build', gulp.series(['path', 'js', 'style', 'revision:clean', 'revision', 'html', 'jquery', 'image', 'sprite']));
+gulp.task('init', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite']));
+gulp.task('build', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite']));

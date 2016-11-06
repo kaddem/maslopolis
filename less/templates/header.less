@@ -1,0 +1,173 @@
+.header {
+  background-color: @dark-gray;
+  color: @white;
+
+  & > .container {
+    padding-top: 18px;
+    padding-bottom: 25px;
+  }
+}
+
+.logo {
+  .col-5;
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  &__text, &__img {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  &__img {
+    width: 98px;
+  }
+
+  &__text {
+    margin-left: 10px;
+
+    & p {
+      margin: 0;
+      margin-top: 15px;
+      line-height: 14px;
+      text-transform: lowercase;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.fast-contact {
+  .col-3;
+
+  &__phone {
+    font-size: 21px;
+    text-decoration: none;
+    color: @white;
+  }
+
+  &__workmode {
+    font-size: 11px;
+    margin-bottom: 0;
+  }
+}
+
+.nav-search {
+  .col-4;
+  position: relative;
+
+  &__nav {
+    padding-left: 0;
+    // margin: 0;
+  }
+
+  &__nav-item {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  &__nav-link {
+    color: #fff;
+    text-decoration: none;
+
+    &--orange {
+      color: @orange;
+    }
+  }
+
+  &__search {
+    // width: 100%;
+    height: 30px;
+    // background-color: yellow;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 15px;
+  }
+
+
+
+  &__search-label {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-image: url(../img/icon-search.png);
+  }
+
+  &__search-input {
+    display: none;
+    width: 0;
+
+    &:focus {
+      width: 100%;
+    }
+  }
+
+  &__search-btn {
+    display: none;
+  }
+
+}
+
+.nav-line {
+  background-color: #000;
+  padding: 20px 0;
+}
+
+.main-nav {
+  .col-8;
+  .col-offset-1;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    
+    text-align: right;
+  }
+
+  & li {
+    display: inline-block;
+    // text-align: center;
+    margin-left: 83px;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  & a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: @white;
+    transition: all 0.1s ease;
+
+    &:hover {
+      color: @orange;
+    }
+  }
+}
+
+.basket-box {
+  .col-2;
+  text-transform: lowercase;
+  text-align: right;
+
+  &__link {
+    text-decoration: none;
+    color: @white;
+    transition: all 0.1s ease;
+
+    &:hover {
+      color: @orange;
+    }
+  }
+
+  &__number {
+    color: @orange;
+  }
+}

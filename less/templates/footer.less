@@ -1,0 +1,86 @@
+.footer {
+  color: #fff;
+  background-color: @dark-gray;
+  padding: 75px 0 40px 0;
+
+  &__head {
+    font-size: 14px;
+    margin-top: 0;
+    text-transform: uppercase;
+    color: @white;
+    font-weight: normal;
+  }
+
+  &__list {
+    font-size: 14px;
+    padding-left: 0;
+    
+    & li {
+      list-style: none;
+      margin-bottom: 5px;
+    }
+
+    & a {
+      color: @white;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 16px;
+
+
+      &:hover {
+        color: @orange;
+      }
+    }
+  }
+
+  &__logo {
+    .col-3;
+
+    &-link {
+      display: block;
+      text-decoration: none;
+    }
+
+    &-slogan {
+      display: block;
+      color: #fff;
+      font-size: 10px;
+      font-weight: normal;
+      font-family: @font-arial-narrow;
+      margin-top: 10px;
+    }
+  }
+
+  & .logo__img {
+    width: 130px;
+  }
+
+  &__catalog {
+    .col-2;
+  }
+
+  &__partners {
+    .col-2;
+  }
+
+  &__contacts {
+    .col-2;
+  }
+
+  &__pay {
+    .col-offset-1;
+    .col-2;
+  }
+
+  &__pay-system {
+    width: 37px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .copypast {
+    text-align: right;
+    font-size: 8px;
+    padding-right: 30px;
+  }
+}

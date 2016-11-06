@@ -1,0 +1,16 @@
+<svg id="card_type" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.55 21.59">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>mc_logo</title>
+  <g id="Layer_14" data-name="Layer 14">
+    <g>
+      <path class="cls-1" d="M3933.22,3224.53v21.59h35.55v-21.59h-35.55ZM3955.1,3242a6.62,6.62,0,0,0-8.2,0,11.5,11.5,0,1,1,8.2,0h0Zm0,0" transform="translate(-3933.22 -3224.53)"/>
+      <path class="cls-1" d="M3955.1,3231a4.27,4.27,0,0,0-2.54.83,6.63,6.63,0,0,1,0,6.93,4.3,4.3,0,1,0,2.54-7.76h0Zm0,0" transform="translate(-3933.22 -3224.53)"/>
+    </g>
+  </g>
+</svg>

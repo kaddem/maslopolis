@@ -1,0 +1,65 @@
+.advice {
+  background-image: url(../img/d_page_2.jpg);
+  background-size: cover;
+  background-color: #181819;
+  padding-bottom: 80px;
+  padding-top: 65px;
+
+  &__head {
+    text-transform: uppercase;
+    color: @white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+
+    &--strong {
+      color: @orange;
+    }
+  }
+
+  &__list {
+    .row;
+    padding-left: 0;
+  }
+
+  &__item {
+    font-size: 0;
+    .col-4;
+    list-style: none;
+
+    &:nth-child(2n+1) {
+      .col-offset-2;
+    }
+  }
+
+  &__number, &__text {
+    display: inline-block;
+    vertical-align: baseline;
+    box-sizing: border-box;
+  }
+
+  &__number{
+    text-align: right;
+    padding-right: 15px;
+    color: @orange;
+    font-size: 70px;
+    font-weight: bold;
+    width: 30%;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.5em;
+    color: @white;
+    width: 70%;
+  }
+
+  & .btn {
+    width: 270px;
+    margin: 0 auto;
+    margin-top: 55px;
+    display: block;
+    padding: 17px;
+  }
+
+}

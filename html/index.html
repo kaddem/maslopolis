@@ -1,7 +1,12 @@
 @@include('templates/header.html', {
-    "title": "Главная страница"
+    "title": "Маслополис | Главная",
+    "class-header": "header--main",
+    "main-class": "page-main"
 })
-
-    <p>Hello!</p>
+@@include('page_main/main_promo.html')
+@@include('page_main/main_catalog.html')
+@@include('page_main/main_advice.html')
+@@include('page_main/main_bonus.html')
+@@include('page_main/main_contacts.html')
 
 @@include('templates/footer.html')

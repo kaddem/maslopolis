@@ -1,0 +1,26 @@
+.breadcrumbs {
+  padding: 40px 0 20px 0;
+  font-size: 12px;
+
+  &__link {
+    color: @text-light-gray;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+
+      &:after {
+        text-decoration: none;
+      }
+    }
+
+    &:after{
+      content: ' /';
+      text-decoration: none;
+    }
+  }
+
+  &__this {
+    color: @text-gray;
+  }
+}

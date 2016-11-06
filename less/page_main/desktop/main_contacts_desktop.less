@@ -1,0 +1,79 @@
+.main-contacts {
+  position: relative;
+}
+
+.map {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding-right: @indent-col;
+}
+
+.contacts-block {
+  .col-5;
+  .col-offset-7;
+  color: @dark-gray;
+
+  &__head {
+    font-size: 21px;
+    text-transform: uppercase;
+    width: 270px;
+
+    &--strong {
+      color: @orange;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 18px;
+    width: 270px;
+    margin-bottom: 45px;
+  }
+
+  &__form {
+    width: 400px;
+  }
+
+  &__input-box {
+    margin-bottom: 7px;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 11px;
+    padding: 12px;
+  }
+
+  &__form-submit {
+    width: 200px;
+    margin-top: 13px;
+  }
+}
+
+.social {
+  padding-left: 0;
+  margin-top: 30px;
+
+  &__item {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  &__link {
+    display: inline-block;
+    width: 25px;
+
+    & svg {
+      width: 100%;
+      fill: @dark-gray;
+      transition: all 0.1s ease;
+    }
+    &:hover svg {
+      fill: @orange;
+    }
+  }
+}

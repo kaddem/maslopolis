@@ -1,0 +1,204 @@
+.catalog_header {
+
+  .bonus {
+    color: @white;
+    background-color: @dark-gray;
+
+    &__box {
+      .col-offset-6;
+      .col-6;
+      .clearfix;
+      position: relative;
+    }
+
+    &__head {
+      text-transform: uppercase;
+      font-size: 18px;
+
+    }
+
+    &__core {
+      color: @orange;
+      width: 40%;
+      float: left;
+      .clearfix;
+      font-size: 0;
+    }
+
+    &__core-big, &__core-text {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    &__core-big {
+      font-size: 42px;
+      font-weight: bold;
+      height: 44px;
+      margin-right: 10px;
+
+      & img {
+        max-height: 100%;
+        display: block;
+      }
+    }
+
+    &__core-text {
+      font-size: 11px;
+      width: 55%;
+      margin-bottom: 3px;
+    }
+
+    &__link-partners {
+      color: #000;
+      text-decoration: none;
+    }
+
+  }
+
+}
+
+
+.filter {
+  .col-3;
+  padding-right: 50px;
+
+  &__title {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  &__origin-item {
+    margin: 10px 0;
+    font-size: 10px;
+    line-height: 21px;
+
+    & input {
+      margin-right: 10px;
+    }
+    & input, & label {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+
+  &__price {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__price-title {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+  &__price-currency {
+    text-transform: lowercase;
+  }
+
+  &__price-input {
+    width: 60px;
+    padding: 5px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+
+    &-title {
+      cursor: pointer;
+      position: relative;
+      padding: 10px;
+      border: 1px solid @text-light-gray;
+
+      & span {
+        font-size: 10px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-left: 1px solid #000;
+        border-top: 1px solid #000;
+        transform: rotate(45deg) translateY(50%);
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 10px;
+      }
+    }
+
+    &-body {
+      padding: 5px;
+      border: 1px solid @text-light-gray;
+      .clearfix();
+      margin: 3px 0;
+    }
+  }
+
+  &__checkbox {
+    width: 50%;
+    float: left;
+    font-size: 9px;
+    margin: 5px 0;
+
+    & input, & label {
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+
+.page-catalog {
+
+  & .catalog__item {
+    .col-4;
+  }
+
+}
+.catalog {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__showcase {
+    .col-9;
+  }
+
+  &__represent {
+    .row;
+  }
+
+  &__hint, &__sort {
+    .col-6;
+  }
+
+  &__hint {
+    color: @text-light-gray;
+  }
+
+  &__sort {
+    text-align: right;
+
+    &-text, &-link {
+      margin: 0;
+      display: inline-block;
+    }
+
+    &-text {
+      color: @text-light-gray;
+    }
+
+    &-link {
+      color: @text-gray;
+      text-decoration: none;
+    }
+  }
+
+}
