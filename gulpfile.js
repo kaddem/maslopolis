@@ -10,6 +10,7 @@ var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var gulpif = require('gulp-if');
 var imagemin = require('gulp-imagemin');
+var mqpacker = require('css-mqpacker');
 var spritesmith = require('gulp.spritesmith');
 
 var CFG = JSON.parse(fs.readFileSync('settings.json'));
@@ -35,8 +36,11 @@ gulp.task('style', function() {
   return gulp.src('less/style.less')
     .pipe(gulpif(CFG.SRCMAP, sourcemaps.init()))
     .pipe(less())
-    .pipe(postcss([ autoprefixer({ browsers: ['last 4 versions'] }) ]))
-    .pipe(cssnano())
+    .pipe(postcss([ 
+      autoprefixer({ browsers: ['last 4 versions'] }),
+      mqpacker({ sort: true }),
+    ]))
+    // .pipe(cssnano())
     .pipe(gulpif(CFG.SRCMAP, sourcemaps.write()))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest(CFG.PATH_PUBLIC + 'css'));
