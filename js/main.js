@@ -1,2 +1,3 @@
-@@include('component.js')
+// @@include('component.js')
+@@include('nav.js')
 @@include('tabs.js')

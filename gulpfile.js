@@ -40,7 +40,7 @@ gulp.task('style', function() {
       autoprefixer({ browsers: ['last 4 versions'] }),
       mqpacker({ sort: true }),
     ]))
-    // .pipe(cssnano())
+    .pipe(cssnano())
     .pipe(gulpif(CFG.SRCMAP, sourcemaps.write()))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest(CFG.PATH_PUBLIC + 'css'));
