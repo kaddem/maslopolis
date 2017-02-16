@@ -4,9 +4,15 @@
     margin: 0 auto;
     .clearfix();
     box-sizing: border-box;
+    width: @mobile-width;
+
+    @media screen and (min-width: @tablet-width){
+      width: auto;
+      min-width: @tablet-width;
+    }
 
     @media screen and (min-width: @desktop-width){
-        width: @desktop-width;
+      width: @desktop-width;
     }
     
 }

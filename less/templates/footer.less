@@ -1,7 +1,15 @@
 .footer {
   color: #fff;
   background-color: @dark-gray;
-  padding: 75px 0 40px 0;
+  padding: 45px 0 40px 0;
+
+  @media screen and (min-width: @tablet-width) {
+    padding: 75px 0 40px 0;
+  }
+
+  @media screen and (min-width: @desktop-width) {
+    
+  }
 
   &__head {
     font-size: 14px;
@@ -34,7 +42,16 @@
   }
 
   &__logo {
-    .col-3;
+    display: none;
+
+    @media screen and (min-width: @tablet-width) {
+      .col-3;
+      display: block;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      
+    }
 
     &-link {
       display: block;
@@ -56,20 +73,68 @@
   }
 
   &__catalog {
-    .col-2;
+    .col-12;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: @tablet-width) {
+      .col-2;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      
+    }
   }
 
   &__partners {
-    .col-2;
+    .col-12;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: @tablet-width) {
+      .col-2;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      
+    }
   }
 
   &__contacts {
-    .col-2;
+    .col-12;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: @tablet-width) {
+      .col-2;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      
+    }
   }
 
   &__pay {
-    .col-offset-1;
-    .col-2;
+    .col-12;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: @tablet-width) {
+      .col-offset-1;
+      .col-2;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      
+    }
   }
 
   &__pay-system {
@@ -79,8 +144,16 @@
   }
 
   .copypast {
-    text-align: right;
+    text-align: left;
     font-size: 8px;
     padding-right: 30px;
+
+    @media screen and (min-width: @tablet-width) {
+      text-align: right;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      
+    }
   }
 }

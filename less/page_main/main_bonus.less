@@ -1,44 +1,140 @@
 .page-main {
 
+    @media screen and (min-width: @tablet-width) {
+
+    }
+
+    @media screen and (min-width: @desktop-width) {
+        
+    }
+
   .bonus {
     color: @white;
-    background-color: @dark-gray;
+    background-color: @bg-pink;
+    padding-top: 60px;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: @tablet-width) {
+      background-color: @dark-gray;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      background-color: @dark-gray;
+    }
 
     &__box {
-      .col-offset-4;
-      .col-8;
+      .col-12;
       .clearfix;
-      position: relative;
+
+      @media screen and (min-width: @tablet-width) {
+        .col-offset-4;
+        .col-8;
+        position: relative;
+      }
+
+      @media screen and (min-width: @desktop-width) {
+        .col-offset-4;
+        .col-8;
+        position: relative;
+      }
 
       &:before {
-        content: '';
-        position: absolute;
-        display: block;
-        background: linear-gradient(55deg, @orange 95%, @dark-gray 95%);
-        width: 400%;
-        right: 100%;
-        top: 0;
-        bottom: 0;
-        margin: auto;
+
+        @media screen and (min-width: @tablet-width) {
+          content: '';
+          position: absolute;
+          display: block;
+          background: linear-gradient(55deg, @orange 95%, @dark-gray 95%);
+          width: 400%;
+          right: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+
+        @media screen and (min-width: @desktop-width) {
+          content: '';
+          position: absolute;
+          display: block;
+          background: linear-gradient(55deg, @orange 95%, @dark-gray 95%);
+          width: 400%;
+          right: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        
       }
 
     }
 
     &__head {
       text-transform: uppercase;
-      font-size: 24px;
+      text-align: center;
+      font-size: 16px;
+
+      @media screen and (min-width: @tablet-width) {
+        text-align: left;
+        font-size: 24px;
+      }
+
+      @media screen and (min-width: @desktop-width) {
+        text-align: left;
+        font-size: 24px;
+      }
 
       &--strong {
-        color: @orange;
+        color: @text-color;
+
+        @media screen and (min-width: @tablet-width) {
+          color: @orange;
+        }
+
+        @media screen and (min-width: @desktop-width) {
+          color: @orange;
+        }
+      }
+    }
+
+    &__text {
+      text-align: center;
+      font-size: 11px;
+
+      @media screen and (min-width: @tablet-width) {
+        text-align: left;
+      }
+
+      @media screen and (min-width: @desktop-width) {
+        text-align: left;
       }
     }
 
     &__core {
-      color: @orange;
-      width: 40%;
-      float: left;
+      color: @text-color;
       .clearfix;
-      font-size: 0;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      @media screen and (min-width: @tablet-width) {
+        color: @orange;
+        width: 40%;
+        float: left;
+        .clearfix;
+        font-size: 0;
+        text-align: left;
+      }
+
+      @media screen and (min-width: @desktop-width) {
+        color: @orange;
+        width: 40%;
+        float: left;
+        .clearfix;
+        font-size: 0;
+        text-align: left;
+      }
     }
 
     &__core-big, &__core-text {

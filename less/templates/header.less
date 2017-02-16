@@ -1,7 +1,33 @@
+* {
+  box-sizing: border-box;
+}
 .header {
   background-color: @dark-gray;
   color: @white;
-  position: relative;
+  // position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3000;
+
+  @media screen and (min-width: @tablet-width) {
+    background-color: @dark-gray;
+    color: @white;
+    position: relative;
+  }
+
+  @media screen and (min-width: @desktop-width) {
+
+  }
+
+  // &--main {
+  //   background-color: transparent;
+  //   position: fixed;
+  //   width: 100%;
+  //   top: 0;
+  //   left: 0;
+  // }
 
   & > .container {
     padding-top: 18px;
@@ -20,7 +46,15 @@
       padding-top: 18px;
       padding-bottom: 18px;
       position: static;
+    }
 
+    & > .row {
+
+      &:after {
+        @media screen and (min-width: @desktop-width) {
+          display: none;
+        }
+      }
     }
   }
 
@@ -35,7 +69,7 @@
     cursor: pointer;
 
     @media screen and (min-width: @tablet-width) {
-      height: 28px;
+      height: 24px;
     }
 
     @media screen and (min-width: @desktop-width) {
@@ -53,13 +87,13 @@
       transition: all .3s ease;
 
       @media screen and (min-width: @tablet-width) {
-        width: 40px;
-        height: 6px;
+        width: 30px;
+        height: 4px;
       }
 
       @media screen and (min-width: @desktop-width) {
-        width: 40px;
-        height: 5px;
+        width: 30px;
+        height: 4px;
       }
     
       &:before, &:after {
@@ -74,13 +108,13 @@
         transition: all .3s ease;
 
         @media screen and (min-width: @tablet-width) {
-          width: 40px;
-          height: 6px;
+          width: 30px;
+          height: 4px;
         }
 
         @media screen and (min-width: @desktop-width) {
-          width: 40px;
-          height: 5px;
+          width: 30px;
+          height: 4px;
         }
       }
     
@@ -88,7 +122,7 @@
         top: 10px;
 
         @media screen and (min-width: @desktop-width) {
-          top: 12px;
+          top: 10px;
         }
       }
 
@@ -96,7 +130,7 @@
         bottom: 10px;
 
         @media screen and (min-width: @desktop-width) {
-          bottom: 12px;
+          bottom: 10px;
         }
       }
     }
@@ -133,11 +167,13 @@
   }
 }
 
+
 .logo {
   display: none;
 
   @media screen and (min-width: @tablet-width) {
-
+    display: block;
+    .col-7;
   }
 
   @media screen and (min-width: @desktop-width) {
@@ -155,7 +191,7 @@
     vertical-align: bottom;
 
     @media screen and (min-width: @tablet-width) {
-
+      vertical-align: middle;
     }
 
     @media screen and (min-width: @desktop-width) {
@@ -187,7 +223,7 @@
   .col-12;
 
   @media screen and (min-width: @tablet-width) {
-
+    .col-5;
   }
 
   @media screen and (min-width: @desktop-width) {
@@ -204,7 +240,9 @@
     display: none;
 
     @media screen and (min-width: @tablet-width) {
-
+      display: block;
+      font-size: 11px;
+      margin-bottom: 0;
     }
 
     @media screen and (min-width: @desktop-width) {
@@ -225,15 +263,16 @@
 
   @media screen and (min-width: @desktop-width) {
     .col-4;
-    float: none;
-    position: absolute;
-    right: 0;
-    top: 15px;
+    margin-top: 17px;
+    float: right;
+    position: relative;
   }
 
   &__nav {
-    padding-left: 0;
+    padding-left: 35px;
+    padding-right: 35px;
     margin-bottom: 0;
+    margin-top: 0;
     .clearfix();
     
     @media screen and (min-width: @tablet-width) {
@@ -241,32 +280,35 @@
     }
 
     @media screen and (min-width: @desktop-width) {
-      
+      margin-top: 0;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 
   &__nav-item {
-    display: inline-block;
-    // margin-right: 15px;
+    display: block;
     float: none;
+    margin-bottom: 20px;
 
     @media screen and (min-width: @tablet-width) {
 
     }
 
     @media screen and (min-width: @desktop-width) {
-      .col-4;
+      .col-5;
+      margin-bottom: 0;
     }
 
     &:first-child {
-      display: none;
+      // display: none;
 
       @media screen and (min-width: @tablet-width) {
 
       }
 
       @media screen and (min-width: @desktop-width) {
-        display: inline-block;
+        // display: inline-block;
       }
     }
   }
@@ -274,39 +316,116 @@
   &__nav-link {
     color: #fff;
     text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    @media screen and (min-width: @tablet-width) {
+
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      text-transform: none;
+      font-size: 12px;
+    }
+
+    &:hover {
+      color: @orange;
+    }
 
     &--orange {
-      color: @orange;
+      
+      @media screen and (min-width: @tablet-width) {
+        
+      }
+
+      @media screen and (min-width: @desktop-width) {
+        color: @orange;
+      }
     }
   }
 
   &__search {
-    // width: 100%;
-    height: 30px;
-    // background-color: yellow;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    right: 15px;
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-bottom: 1px solid @bd-color;
+
+    @media screen and (min-width: @tablet-width) {
+      color: @orange;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      position: absolute;
+      padding-left: 0;
+      padding-right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+      border-top: none;
+      border-bottom: 2px solid @bd-color;
+    }
   }
 
 
 
   &__search-label {
-    display: inline-block;
+    position: absolute;
     width: 23px;
     height: 23px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     background-image: url(../img/icon-search.png);
+    transition: all .3s ease;
+    cursor: pointer;
+
+    @media screen and (min-width: @desktop-width) {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 0;
+    }
   }
 
   &__search-input {
-    display: none;
-    width: 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all .3s ease;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: normal;
+
+    @media screen and (min-width: @desktop-width) {
+      width: 0;
+      display: inline-block;
+      border: none;
+      padding-left: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: @dark-gray;
+    }
 
     &:focus {
-      width: 100%;
+      @media screen and (min-width: @desktop-width) {
+        width: 380px;
+        padding-left: 40px;
+      }
+
+      & + .nav-search__search-label {
+        @media screen and (min-width: @desktop-width) {
+          right: 350px;
+        }
+      }
     }
+
   }
 
   &__search-btn {
@@ -317,33 +436,49 @@
 
 .nav-line {
   background-color: #000;
-  padding: 40px 20px;
+  padding: 40px 0;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  z-index: 4000;
   display: none;
+
 
   @media screen and (min-width: @mobile-width) {
     top: 0;
   }
 
   @media screen and (min-width: @tablet-width) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: @desktop-width) {
+    background-color: @dark-gray;
+    padding: 0;
     position: static;
     display: block;
   }
 
-  @media screen and (min-width: @desktop-width) {
-    top: 100%;
-    padding: 20px 0;
-    width: 100%;
-    position: absolute;
-    // position: static;
-    display: block;
+  &__inner {
+
+    @media screen and (min-width: @desktop-width) {
+      background-color: #000;
+      left: 0;
+      top: 100%;
+      padding: 20px 0;
+      width: 100%;
+      position: absolute;
+      // position: static;
+      display: block;
+    }
   }
 }
 
 .main-nav {
   .col-12;
+  padding-left: 35px;
+  padding-right: 35px;
 
   @media screen and (min-width: @tablet-width) {
 
@@ -369,7 +504,8 @@
 
   & li {
     display: block;
-    margin: 20px 0;
+    margin: 0;
+    margin-bottom: 20px;
 
     @media screen and (min-width: @tablet-width) {
 
@@ -414,10 +550,8 @@
   .col-12;
   font-size: 12px;
   margin-bottom: 50px;
-  // .col-offset-r-1;
-  // float: right;
-  // text-transform: lowercase;
-  // text-align: right;
+  padding-left: 35px;
+  padding-right: 35px;
 
   @media screen and (min-width: @tablet-width) {
 
@@ -429,7 +563,9 @@
     float: right;
     text-transform: lowercase;
     text-align: right;
-    margin-bottom: 0;
+    margin-top: 2px;
+    margin-bottom: 1px;
+    // margin: 1px 0;
   }
 
   &__link {

@@ -1,80 +1,172 @@
 .promo {
   background-image: url(../img/d_page_1.jpg);
   background-size: cover;
-  // background-color: #181819;
-  padding-bottom: 200px;
-  padding-top: 170px;
+  background-color: #181819;
+  padding-bottom: 150px;
+  padding-top: 140px;
+  text-align: center;
+
+  @media screen and (min-width: @tablet-width) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: @desktop-width) {
+    text-align: left;
+    padding-bottom: 200px;
+    padding-top: 170px;
+  }
 
   &__head {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #fff;
     text-transform: uppercase;
-    .col-offset-3;
-    font-weight: bold;
-    color: @white;
 
-    &-strong {
-      color: @orange;
-      font-weight: bold;
+    @media screen and (min-width: @tablet-width) {
+      display: none;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      display: none;
     }
   }
 
-  .main-search {
+  &__slogan {
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal;
+
+    @media screen and (min-width: @tablet-width) {
+      display: none;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      display: none;
+    }
+  }
+
+
+  &__text {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @white;
+    display: none;
+
+    @media screen and (min-width: @tablet-width) {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      .col-offset-3;
+    }
+  }
+
+  &__text-strong {
+    color: @orange;
+    font-weight: bold;
+  }
+}
+
+.main-search {
+  margin-top: 80px;
+
+  @media screen and (min-width: @tablet-width) {
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: @desktop-width) {
     .col-offset-3;
+  }
 
-    &__question {
-      color: @white;
+  &__question {
+    color: @white;
+    display: none;
+
+    @media screen and (min-width: @tablet-width) {
+      display: block;
     }
 
-    &__box {
-      .clearfix;
+    @media screen and (min-width: @desktop-width) {
+      display: block;
     }
+  }
 
-    &__group {
+  &__box {
+    .clearfix;
+  }
+
+  &__group {
+    width: 100%;
+    position: relative;
+    // margin-right: 13px;
+
+    @media screen and (min-width: @tablet-width) {
       width: 300px;
-      position: relative;
       float: left;
-      margin-right: 13px;
     }
 
-    &__label {
-      position: absolute;
-      left: 13px;
-      font-size: 10px;
-      line-height: 10px;
-      height: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all 0.1s ease;
+    @media screen and (min-width: @desktop-width) {
+      width: 300px;
+      float: left;
     }
+  }
 
-    &__input {
-      box-sizing: border-box;
-      width: 100%;
-      background-color: @white;
-      font-size: 12px;
-      line-height: 12px;
-      padding: 15px;
-      border: none;
+  &__label {
+    position: absolute;
+    left: 13px;
+    font-size: 10px;
+    line-height: 10px;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.1s ease;
+  }
 
-      &:focus + .main-search__label {
-        top: 10px;
-      }
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: @white;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 15px;
+    border: none;
+
+    &:focus + .main-search__label {
+      top: 10px;
     }
+  }
 
-    &__reset {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      right: 5px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-    }
+  &__reset {
+    display: none;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
 
-    &__submit {
+  &__submit {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    .btn;
+    .btn--orange;
+    padding: 13px;
+
+    @media screen and (min-width: @tablet-width) {
+      margin-top: 0;
+      margin-left: 15px;
       width: 155px;
       float: left;
-      .btn;
-      .btn--orange;
+    }
+
+    @media screen and (min-width: @desktop-width) {
+      width: 155px;
+      float: left;
     }
   }
 }

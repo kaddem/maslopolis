@@ -28,8 +28,24 @@ $(document).ready(function(){
 
   $(window).on('scroll', function(e) { // отслеживаем событие на элементе window
     var navBurger = $('.header__burger');
-    var nav = $('.nav');
+    var nav = $('.nav-line');
     navBurgerClose(navBurger, nav);
+  });
+
+
+  $( window ).resize(function() {
+    var winWidth = $( window ).width();
+    var burger = $('.header__burger');
+    var nav = $('.nav-line');
+
+    $(burger).removeClass('header__burger--close');
+
+    if ( winWidth > 1199 ) {
+      nav.show();
+    } else {
+      nav.hide();
+    }
+
   });
 
 });
